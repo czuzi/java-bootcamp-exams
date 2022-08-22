@@ -58,10 +58,10 @@ class UserTest {
 
         assertEquals(5, user.sumOfViews());
     }
-
-    @Test
-    void testSumOfViewsWithNoViews(){
-        assertEquals(0, user.sumOfViews());
-    }
+//
+//    @Test
+//    void testSumOfViewsWithNoViews(){
+//        assertEquals(0, user.sumOfViews());
+//    }
 
 }

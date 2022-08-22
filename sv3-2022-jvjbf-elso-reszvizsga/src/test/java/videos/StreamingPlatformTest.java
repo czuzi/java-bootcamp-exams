@@ -65,16 +65,16 @@ class StreamingPlatformTest {
         assertEquals("Johnny", streamingPlatform.getUsers().get(0).getUserName());
     }
 
-    @Test
-    void testFindMaxViews(){
-        assertEquals(5, streamingPlatform.findMaxViews());
-    }
-
-    @Test
-    void testFindMaxViewsEmptyPlatform(){
-        StreamingPlatform streamingPlatform = new StreamingPlatform();
-
-        assertEquals(0, streamingPlatform.findMaxViews());
-    }
+//    @Test
+//    void testFindMaxViews(){
+//        assertEquals(5, streamingPlatform.findMaxViews());
+//    }
+//
+//    @Test
+//    void testFindMaxViewsEmptyPlatform(){
+//        StreamingPlatform streamingPlatform = new StreamingPlatform();
+//
+//        assertEquals(0, streamingPlatform.findMaxViews());
+//    }
 
 }
