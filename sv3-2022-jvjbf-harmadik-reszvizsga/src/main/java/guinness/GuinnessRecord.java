@@ -64,7 +64,8 @@ public class GuinnessRecord {
 	public Recorder findRecordHolder() {
 		return attempts.entrySet().stream()
 				.max((o1, o2) -> o1.getValue().stream().max(Integer::compare).get().compareTo(o2.getValue().stream().max(Integer::compare).get()))
-				.get().getKey();
+				.orElseThrow(IllegalStateException::new)
+				.getKey();
 	}
 
 	public String getRecordName() {
