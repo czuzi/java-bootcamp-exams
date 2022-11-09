@@ -31,8 +31,6 @@ public class City {
 
 	public boolean isThereBiggerAreaInStreetThan(String street, int area) {
 		return buildings.stream()
-				.filter(b -> b.getStreet().equals(street) && b.getArea() > area)
-				.findAny()
-				.isPresent();
+				.anyMatch(b -> b.getStreet().equals(street) && b.getArea() > area);
 	}
 }

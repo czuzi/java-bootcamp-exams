@@ -15,10 +15,13 @@ public class StreamingPlatform {
 	}
 
 	public int findMaxViews() {
+		if (users.isEmpty()) {
+			return 0;
+		}
 		int max = users.get(0).sumOfViews();
-		for (int i = 1; i < users.size(); i++) {
-			if (users.get(i).sumOfViews() > users.get(i-1).sumOfViews()){
-				max = users.get(i).sumOfViews();
+		for (User user : users) {
+			if (user.sumOfViews() > max) {
+				max = user.sumOfViews();
 			}
 		}
 		return max;
