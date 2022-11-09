@@ -79,18 +79,18 @@ class GuinnessRecordTest {
         assertEquals(120, guinnessRecord.getBestAttempt());
     }
 
-//    @Test
-//    void testFindRecordHolder() {
-//        guinnessRecord.tryBeatRecord(120, new Recorder(1, "John"));
-//        guinnessRecord.tryBeatRecord(120, new Recorder(2, "Jane"));
-//        guinnessRecord.tryBeatRecord(121, new Recorder(3, "Jill"));
-//        guinnessRecord.tryBeatRecord(119, new Recorder(4, "Jack"));
-//
-//        Recorder recorder = guinnessRecord.findRecordHolder();
-//
-//        assertTrue(new Recorder(3, "Jill").equals(recorder));
-//    }
-//
+    @Test
+    void testFindRecordHolder() {
+        guinnessRecord.tryBeatRecord(120, new Recorder(1, "John"));
+        guinnessRecord.tryBeatRecord(120, new Recorder(2, "Jane"));
+        guinnessRecord.tryBeatRecord(121, new Recorder(3, "Jill"));
+        guinnessRecord.tryBeatRecord(119, new Recorder(4, "Jack"));
+
+        Recorder recorder = guinnessRecord.findRecordHolder();
+
+        assertTrue(new Recorder(3, "Jill").equals(recorder));
+    }
+
 //    @Test
 //    void testFindRecorderWithEmptyAttempts() {
 //        RecordHasNoAttemptsException re = assertThrows(RecordHasNoAttemptsException.class, () -> guinnessRecord.findRecordHolder());
