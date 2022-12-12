@@ -25,18 +25,20 @@ public class GuinnessRecord {
 
 	public boolean tryBeatRecord(int amount, Recorder recorder) {
 		List<Integer> records = new ArrayList<>();
-		boolean result = false;
 
 		addRecord(amount, recorder);
+
 		getRecords(records);
 
-		for (int current: records) {
-			if (amount >= current) {
-				bestAttempt = amount;
-				result = true;
-			}
+		if (recordType==RecordType.TIME && bestAttempt>amount){
+			bestAttempt = amount;
+			return true;
 		}
-		return result;
+		if (recordType==RecordType.QUANTITY && bestAttempt<amount){
+			bestAttempt = amount;
+			return true;
+		}
+		return false;
 	}
 
 	private void getRecords(List<Integer> temp) {
