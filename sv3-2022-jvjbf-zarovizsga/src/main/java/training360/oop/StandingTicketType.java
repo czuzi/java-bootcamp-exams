@@ -4,7 +4,7 @@ public enum StandingTicketType {
 
 	FRONT_OF_STAGE(20), NORMAL(0);
 
-	private int percentage;
+	private final int percentage;
 
 	StandingTicketType(int percentage) {
 		this.percentage = percentage;

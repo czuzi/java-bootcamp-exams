@@ -33,7 +33,7 @@ public class AnimalRepository {
 		Integer result;
 		result = jdbcTemplate.queryForObject("select sum(animal_count) as animal_sum from animals where animal_type = ?;",
 				(rs, rowNum) -> rs.getInt("animal_sum"), animalType);
-		if (result == null) {
+		if (result == 0) {
 			throw new IllegalArgumentException("No animal found!");
 		}
 		return result;
