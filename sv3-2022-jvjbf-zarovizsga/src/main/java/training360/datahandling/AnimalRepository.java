@@ -16,7 +16,7 @@ public class AnimalRepository {
 
 	public void saveAnimal(Animal animal) {
 		jdbcTemplate.update("insert into animals (animal_type, animal_count, observation_date) values (?, ?, ?)",
-				animal.getAnimalType(), animal.getCount(), Date.valueOf(animal.getDate()));
+				animal.getAnimalType(), animal.getCountOfAnimal(), Date.valueOf(animal.getDateOfObservation()));
 	}
 
 	public List<Animal> findAllAnimals() {
@@ -29,8 +29,13 @@ public class AnimalRepository {
 				));
 	}
 
-//	public Integer countAllByAnimalType(String animalType) {
-//		return jdbcTemplate.queryForObject("select sum(animal_count) from animals where animal_type = ?",
-//				(rs, rowNum) -> rs.getInt("animal_count"));
-//	}
+	public Integer countAllByAnimalType(String animalType) {
+		Integer result;
+		result = jdbcTemplate.queryForObject("select sum(animal_count) as animal_sum from animals where animal_type = ?;",
+				(rs, rowNum) -> rs.getInt("animal_sum"), animalType);
+		if (result == null) {
+			throw new IllegalArgumentException("No animal found!");
+		}
+		return result;
+	}
 }

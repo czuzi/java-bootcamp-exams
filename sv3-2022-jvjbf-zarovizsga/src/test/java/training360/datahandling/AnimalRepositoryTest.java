@@ -45,21 +45,21 @@ class AnimalRepositoryTest {
         assertEquals("Monkey", animals.get(0).getAnimalType());
     }
 
-//    @Test
-//    void testCountAllByAnimalType() {
-//        animalRepository.saveAnimal(new Animal("Monkey", 12, LocalDate.of(2022, 11, 11)));
-//        animalRepository.saveAnimal(new Animal("Giraffe", 11, LocalDate.of(2022, 11, 11)));
-//        animalRepository.saveAnimal(new Animal("Monkey", 13, LocalDate.of(2022, 11, 12)));
-//
-//        int count = animalRepository.countAllByAnimalType("Monkey");
-//
-//        assertEquals(25, count);
-//    }
-//
-//    @Test
-//    void testCountByAnimalTypeWrongType() {
-//        IllegalArgumentException iae = assertThrows(IllegalArgumentException.class,
-//                () -> animalRepository.countAllByAnimalType("Monkey"));
-//        assertEquals("No animal found!", iae.getMessage());
-//    }
+    @Test
+    void testCountAllByAnimalType() {
+        animalRepository.saveAnimal(new Animal("Monkey", 12, LocalDate.of(2022, 11, 11)));
+        animalRepository.saveAnimal(new Animal("Giraffe", 11, LocalDate.of(2022, 11, 11)));
+        animalRepository.saveAnimal(new Animal("Monkey", 13, LocalDate.of(2022, 11, 12)));
+
+        int count = animalRepository.countAllByAnimalType("Monkey");
+
+        assertEquals(25, count);
+    }
+
+    @Test
+    void testCountByAnimalTypeWrongType() {
+        IllegalArgumentException iae = assertThrows(IllegalArgumentException.class,
+                () -> animalRepository.countAllByAnimalType("Monkey"));
+        assertEquals("No animal found!", iae.getMessage());
+    }
 }

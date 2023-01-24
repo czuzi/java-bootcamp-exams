@@ -6,20 +6,20 @@ public class Animal {
 
 	private Long id;
 	private String animalType;
-	private int count;
-	private LocalDate date;
+	private int countOfAnimal;
+	private LocalDate dateOfObservation;
 
-	public Animal(String animalType, int count, LocalDate date) {
+	public Animal(String animalType, int countOfAnimal, LocalDate dateOfObservation) {
 		this.animalType = animalType;
-		this.count = count;
-		this.date = date;
+		this.countOfAnimal = countOfAnimal;
+		this.dateOfObservation = dateOfObservation;
 	}
 
-	public Animal(Long id, String animalType, int count, LocalDate date) {
+	public Animal(Long id, String animalType, int countOfAnimal, LocalDate dateOfObservation) {
 		this.id = id;
 		this.animalType = animalType;
-		this.count = count;
-		this.date = date;
+		this.countOfAnimal = countOfAnimal;
+		this.dateOfObservation = dateOfObservation;
 	}
 
 	public Long getId() {
@@ -30,11 +30,11 @@ public class Animal {
 		return animalType;
 	}
 
-	public int getCount() {
-		return count;
+	public int getCountOfAnimal() {
+		return countOfAnimal;
 	}
 
-	public LocalDate getDate() {
-		return date;
+	public LocalDate getDateOfObservation() {
+		return dateOfObservation;
 	}
 }

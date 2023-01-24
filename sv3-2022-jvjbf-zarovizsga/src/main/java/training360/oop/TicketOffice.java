@@ -30,7 +30,7 @@ public class TicketOffice {
 	public Map<BasicTicket, Integer> collectTicketCountByEvent() {
 		Map<BasicTicket, Integer> result = new HashMap<>();
 		for (Ticket ticket: tickets) {
-			result.put(ticket.getBasicTicket(), result.getOrDefault(ticket.getBasicTicket(), 1));
+			result.put(ticket.getBasicTicket(), result.getOrDefault(ticket.getBasicTicket(), 0) + 1);
 		}
 		return result;
 	}
